@@ -1,8 +1,18 @@
 FLAGS=-Wall -Wextra
-OUTPUT=passgen.o
+SRC=main.c
 
-main:
-	gcc ${FLAGS} main.c -o ${OUTPUT}
+ifeq ($(OS), Windows_NT)
+    OUTPUT=passgen.exe
+    RM=del /F /Q
+else
+    OUTPUT=passgen
+    RM=rm -rf
+endif
 
-clear:
-	rm -rf *.o
+all: $(OUTPUT)
+
+$(OUTPUT):
+	gcc $(FLAGS) $(SRC) -o $(OUTPUT)
+
+clean:
+	$(RM) $(OUTPUT)
