@@ -9,7 +9,7 @@
 
 ### Flags:
 
-- `--include-extra`: Add Special characters to password, making it stronger :strong:;
+- `--include-extra`: Add Special characters to password, making it stronger;
 
 - `--insensitive`: Limits the password to contain only lowercase characters;
 
